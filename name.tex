@@ -1,0 +1,45 @@
+\documentclass[12 pt, letterpaper, twoside]{article}
+
+\title{logicgate}
+
+\author{V SASHANK REDDY\thanks{ggv sir}}
+
+\usepackage{circuitikz}
+
+
+
+\begin{document}
+
+\maketitle{logic gate for e with the expression e=AD’+ B’CD’+AB’C’}
+
+  \begin{circuitikz}                                    \draw
+
+(5,-3)node[american or port, number inputs=3, anchor=in 1] (or1) {}
+(or1.out 1) node[anchor=west] {e}
+(0,-3)node[american and port, number inputs=3, anchor=in 1] (and1) {}
+(and1.in 1) node[anchor=east] {D}
+(and1.in 2) node[anchor=east] {B}
+(and1.in 3) node[anchor=east] {C}
+(and1.bin 1) node[ocirc, left]{} 
+(and1.bin 2) node[ocirc, left]{} 
+
+(0,-6)node[american and port, number inputs=3, anchor=in 1] (and2) {}
+(and2.in 1) node[anchor=east] {A}
+(and2.in 2) node[anchor=east] {B}
+(and2.in 3) node[anchor=east] {C}
+(and2.bin 2) node[ocirc, left]{} 
+(and2.bin 3) node[ocirc, left]{} 
+
+(0,0)node[american and port, number inputs=2, anchor=in 1] (and3) {}
+(and3.in 1) node[anchor=east] {A}
+(and3.in 2) node[anchor=east] {D}
+(and3.bin 2) node[ocirc, left]{} 
+(and2.out)--(or1.in 3)
+(and1.out)--(or1.in 2)
+(and3.out)--(or1.in 1)
+    \end{circuitikz}
+
+
+
+
+    \end{document}
